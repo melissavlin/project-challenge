@@ -1,0 +1,6 @@
+<%= form_for([ @dog, Like.new ], remote: true) do |form| %>
+<%#= form_for(@like, remote: true) do |form| %>
+	<%= form.hidden_field :dog_id, value: @dog.id %>
+	<%= form.hidden_field :user_id, value: current_user.id %>
+	<%= form.submit "Like" %>
+<% end %>

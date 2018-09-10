@@ -12,4 +12,11 @@
   	<br>
   	<%= link_to "Delete #{@dog.name}'s Profile", dog_path, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
+
+  <p>Likes: <%= @total_likes %></p>
+
+  <% if (user_signed_in? && current_user.id != @dog.user_id) %>
+
+  	<%= render 'likes/button', dog: @dog %>
+  <% end %>
 </section>

@@ -11,6 +11,7 @@ class DogsController < ApplicationController
   # GET /dogs/1
   # GET /dogs/1.json
   def show
+    @total_likes = Like.where(dog_id: @dog.id).count
   end
 
   # GET /dogs/new
