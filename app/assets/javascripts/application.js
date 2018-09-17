@@ -16,3 +16,6 @@
 //= require_tree .
 
 console.log('Welcome!');
+$('.carousel').carousel({
+  interval: 1000
+});
