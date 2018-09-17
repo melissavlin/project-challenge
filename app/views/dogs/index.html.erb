@@ -1,4 +1,6 @@
 <% @dogs.each_slice(2) do |set| %>
 	<%= render partial: 'thumbnail', collection: set, as: :dog %>
-	<%= image_tag 'ad.jpg', alt: 'Best collar ever!' %>
+	<% if set.count == 2 %>
+		<%= image_tag 'ad.jpg', alt: 'Best collar ever!' %>
+	<% end %>
 <% end %>
